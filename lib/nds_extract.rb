@@ -68,8 +68,16 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
-    name =
-    movies_collection = 
+   row = 0 
+   result = []
+   while row < source.length do
+    name = source[row][:name]
+    movies_collection = source[row][:movies]
+    result << movies_with_director_key(name, movies_collection)
+    
+    row +=1 
+  end
+  result
 end
 
 def gross_per_studio(collection)
