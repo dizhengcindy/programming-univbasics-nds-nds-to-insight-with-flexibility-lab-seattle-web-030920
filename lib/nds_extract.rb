@@ -91,10 +91,12 @@ while col < collection.length do
     name2 = studios[sindex]
   
    
-    if name1 == name2 && result[name1]
+    if name1 == name2
+      if result[name1]
       result[name1] += price
-    else
+      else
       result[name1] = price
+      end
     end
     
   sindex +=1
